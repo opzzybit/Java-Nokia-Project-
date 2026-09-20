@@ -49,12 +49,122 @@ import java.util.Scanner;
 
 switch (option){
        
+       case 1 -> {
+String profile = """
+  ========PROFILE========
+
+1. General MODE 
+
+2. Silent
+
+3. Meeting
+
+4. outdoor
+
+5. Customize
+""";
+   System.out.println(profile);
+   System.out.println("Enter your option");
+    int phoneprofile = input.nextInt();
+    
+switch (phoneprofile){
+    case 1 -> {
+String generalmode ="""
+      GENERAL MODE
+    
+   GENERAL MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(generalmode);
+}
+}
+
+switch (phoneprofile){
+    case 2 -> {
+String silent ="""
+      SILENT MODE
+    
+   SILENT MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(silent);
+}
+}
+
+switch (phoneprofile){
+    case 3 -> {
+String meeting ="""
+      MEETING MODE
+    
+   MEETING MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(meeting);
+}
+}
+
+switch (phoneprofile){
+    case 4 -> {
+String outdoor ="""
+      OUTDOOR MODE
+    
+   OUTDOOR MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(outdoor);
+}
+}
+
+switch (phoneprofile){
+    case 5 -> {
+String customize ="""
+      CUSTOMIZE YOUR VOLUME
+    
+1. Increase Ringtone volume
+
+2. Increase keyboard volume
+
+3. Reduce Ringtone volume
+
+4. Reduce Keyboard volume
+""";
+   System.out.println(customize);
+   System.out.println("Enter your option");
+    int customizevolume = input.nextInt();
+
+if (customizevolume== 1){
+     System.out.println("RINGTONE VOLUME INCREASED  !!!!!!");
+    }
+if (customizevolume == 2){
+     System.out.println("KEYBOARD VOLUME INCREASED !!!!!!!");
+    }
+if (customizevolume == 3){
+     System.out.println("RINGTONE VOLUME REDUCED !!!!!!!");
+    }
+if (customizevolume == 4){
+     System.out.println("KEYBOARD VOLUME REDUCED !!!!!!! ");
+    }
+if (customizevolume >= 5){
+     System.out.println("OPTION NOT FOUND  ");
+    }
+}
+}
+}
+}
+
+
+
+
+switch (option){
+       
        case 10 -> {
 String music = """
 ======MUSICS=======  
 
 1. Recorder 
+
 2. Radio
+
 3. track list
 """;
    System.out.println(music);
@@ -107,7 +217,9 @@ String gamemenu ="""
               press
 
 1. Snake game 
+
 2. Bounce ball
+
 3. Quiz
 """;
   System.out.println(gamemenu);
@@ -121,7 +233,9 @@ String snakegame = """
           
           Select Game Level
 1. Easy
+
 2. Normal
+
 3. Hard
 """;
   System.out.println(snakegame);
@@ -150,7 +264,9 @@ String bounceballgame = """
         Select Game Level 
         
 1. Level one 
+
 2. Level two
+
 3. Level three 
 """;
    System.out.println(bounceballgame);
@@ -178,14 +294,18 @@ String quizgame1 = """
 ===============QUIZ TIME !!!!!!==================
 
 There are two(2) questions only, so try your luck.
+
 Use number to answer the questions(1,2, or 3).  
+
 EYES WILL NOT PUSH US oooo.....         
           
           QUESTION 1
   WHICH NUMBER IS BOTH A PERFECT SQUARE AND A PERFECT CUBE?
   
 1. 625
+
 2. 144
+
 3. 729
 """;
    System.out.println(quizgame1);
@@ -212,7 +332,9 @@ String quizgame2= """
   WHICH TREATY FORMALLY ENDED THE THIRTY YEARS' WAR IN 1648?
   
 1. Treaty of Versailles
+
 2. Treaty of Westphalia
+
 3. Treaty of Tordesillas
 """;
     System.out.println(quizgame2);
@@ -245,14 +367,23 @@ String ringtones = """
   Select ring tone 
   
 1. Groovy blue 
+
 2. Merry X mas
+
 3. Tape dance 
+
 4. Ring Ring
+
 5. Mozart 40
+
 6. Rocket 
+
 7. Play ground
+
 8. Tick Tick 
+
 9. sunny walks 
+
 10.Toreador
 """;
   System.out.println(ringtones);
@@ -315,18 +446,74 @@ String clock = """
         Time is like a piece of gold
                select
 1. Alarm
+
 2. Clock
+
 3. Timer
 """;      
    System.out.println(clock);
    System.out.println("Enter your option");
     int worldclock = input.nextInt();
-}
-}
-}
-}
 
- 
+switch (worldclock){
+       case 1  -> {
+String alarm =""" 
+  =======ALARM=========
+
+     EMPTY LIST
+      
+      ADD ALARM
+""";
+   System.out.println(alarm);
+}
+}
+switch (worldclock){
+      case 2  -> {
+String clocksetting ="""
+ ========CLOCK=========
+      
+      EMPTY LIST 
+       
+       ADD CLOCK
+""";
+   System.out.println(clocksetting);
+}
+}
+switch (worldclock){
+      case 3  -> {
+String timer ="""
+ ========TIMER=========
+      
+      EMPTY LIST 
+       
+       ADD TIMER
+""";
+   System.out.println(timer);
+}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+ }
+  }
+    }
  
  
  
