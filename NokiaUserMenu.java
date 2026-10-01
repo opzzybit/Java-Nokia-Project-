@@ -5,19 +5,25 @@ import java.util.Scanner;
         public static void main(String [] args){ 
        
          Scanner input = new Scanner(System.in);
- 
+ System.out.println();
  System.out.println("===========WELCOME TO NOKIA 5510=============");
+     
+   String searchedname = " ";  
+   String notepage1input = " "; 
+   String notepage2input = "  " ;  
+     
      
      System.out.println(); 
      System.out.println("***CREATE A PASSWORD*****"); 
+     System.out.println();  
+     System.out.println("Enter four(4) digit number:");    
          int firstpassword = input.nextInt();
  
  System.out.println();
  int userpassword = firstpassword;
  while (true){  
     System.out.println("****CONFIRM THE PASSWORD*******");
-    System.out.println("Enter four(4) digit number:");
-        int password = input.nextInt();
+         int password = input.nextInt();
        
 if (password == userpassword ){
     break;
@@ -27,7 +33,7 @@ if (password == userpassword ){
      System.out.println("ENTER THE CORRECT PASSWORD");  
  }
  }
-    
+ 
     System.out.println();  
     System.out.println("INSERT A SIM");        
  
@@ -54,17 +60,19 @@ if (password == userpassword ){
 13. Sim Service
 14. Tones 
 15. Service
-0. Back
+
 =====================================
 """;
     
-    System.out.println(Stringmenu);  
+    System.out.println(Stringmenu); 
+    
     System.out.println("Enter your option");
       int option = input.nextInt();
 
 switch (option){
+       
        case 1 -> {
-System.out.println("""
+String profile = """
   ========PROFILE========
 
 1. General MODE 
@@ -76,23 +84,62 @@ System.out.println("""
 4. outdoor
 
 5. Customize
-""");
+""";
+   System.out.println(profile);
    System.out.println("Enter your option");
-    int phoneprofile = input.nextInt();       
-if (phoneprofile == 1){
-   System.out.println("GENERAL MODE ACTIVATED !!!!!!");
+    int phoneprofile = input.nextInt();
+    
+switch (phoneprofile){
+    case 1 -> {
+String generalmode ="""
+      GENERAL MODE
+    
+   GENERAL MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(generalmode);
 }
-if (phoneprofile == 2){
-   System.out.println("SILENT MODE ACTIVATED !!!!!!");
 }
-if (phoneprofile == 3){
-    System.out.println(" MEETING MODE ACTIVATED !!!!!!");
+
+switch (phoneprofile){
+    case 2 -> {
+String silent ="""
+      SILENT MODE
+    
+   SILENT MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(silent);
 }
-if (phoneprofile == 4){
-    System.out.println("OUTDOOR MODE ACTIVATED !!!!!!");
 }
-if (phoneprofile == 5){
-    System.out.println("""
+
+switch (phoneprofile){
+    case 3 -> {
+String meeting ="""
+      MEETING MODE
+    
+   MEETING MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(meeting);
+}
+}
+
+switch (phoneprofile){
+    case 4 -> {
+String outdoor ="""
+      OUTDOOR MODE
+    
+   OUTDOOR MODE ACTIVATED !!!!!!
+
+""";
+   System.out.println(outdoor);
+}
+}
+
+switch (phoneprofile){
+    case 5 -> {
+String customize ="""
       CUSTOMIZE YOUR VOLUME
     
 1. Increase Ringtone volume
@@ -102,28 +149,31 @@ if (phoneprofile == 5){
 3. Reduce Ringtone volume
 
 4. Reduce Keyboard volume
-""");
-}  
-  System.out.println("Enter your option");
+""";
+   System.out.println(customize);
+   System.out.println("Enter your option");
     int customizevolume = input.nextInt();
 
 if (customizevolume== 1){
      System.out.println("RINGTONE VOLUME INCREASED  !!!!!!");
     }
-if  (customizevolume == 2){
+if (customizevolume == 2){
      System.out.println("KEYBOARD VOLUME INCREASED !!!!!!!");
     }
-if  (customizevolume == 3){
+if (customizevolume == 3){
      System.out.println("RINGTONE VOLUME REDUCED !!!!!!!");
     }
-if  (customizevolume == 4){
+if (customizevolume == 4){
      System.out.println("KEYBOARD VOLUME REDUCED !!!!!!! ");
     }
-if  (customizevolume >= 5){
+if (customizevolume >= 5){
      System.out.println("OPTION NOT FOUND  ");
-    }  
+    }
 }
 }
+}
+}
+
 
 switch (option){
        
@@ -144,8 +194,9 @@ String phonebook = """
    System.out.println(phonebook);
    System.out.println("Enter your option");
     int bookpage = input.nextInt();
- if (bookpage== 1){
-  System.out.println("""
+switch(bookpage){
+     case 1 -> {
+String search ="""
            SEARCH
 abc....                        
   
@@ -154,10 +205,19 @@ abc....
   
   
 Enter the name : ...................   
-  """);
+  """;
+    System.out.println(search);
+    System.out.println("Enter the name ");
+      String bookpage2 = input.nextLine();
+          input.nextLine();
+    System.out.println("Enter done ");
+      String bookpage3 = input.nextLine();      
+        bookpage2 += searchedname;
 }
-if (bookpage == 2){
-  System.out.println("""
+}
+switch(bookpage){
+     case 2 -> {
+String addname ="""
            ADD NAME 
 abc....                        
   
@@ -167,7 +227,19 @@ abc....
 
 Enter the name : .................
 Enter phone number :.. ...............   
-  """);
+  """;
+     System.out.println(addname);
+    System.out.println("Enter the name ");
+      String notepage1 = input.nextLine();
+          input.nextLine();   
+    System.out.println("Enter the number ");
+       String notepage2= input.nextLine();
+   
+      notepage1 += notepage1input; 
+      notepage2 += notepage2input; 
+System.out.println();
+System.out.println("CONTACT SAVED");
+}
 }
 if (bookpage == 3){
   System.out.println("""
@@ -197,10 +269,84 @@ if (bookpage == 5){
 2. view type 
 
 3. Speed type 
+  
+0. Back  
   """);
+while(true){
+  System.out.println ("Enter your option:");
+     int booksettings = input.nextInt();
+if (booksettings == 1){
+     System.out.println("""
+                  MEMORY SPECIFICATIONS
+
+• Internal Storage: 64 MB of built-in flash storage, designed for 
+  digital audio files (MP3 and AAC),
+  holding roughly 2 hours of music or about one full album.
+
+• Expandable Storage: None (the device does not have a memory card slot).
+
+• Phone book Capacity: Stores up to 100 names and numbers in the device memory.
+
+• SIM Memory: Supports an additional 250 entries on the SIM card.
+
+• Call and Dial Memory: Accommodates 8 speed-dial and voice-dial entries, 
+  plus a standard call register.   
+""");
+   int back = input.nextInt();
+if (back == 0){
+    continue;
+}
+else{
+   break;
+}   
+   }
+if (booksettings  == 2){
+     System.out.println("""
+                   DISPLAY SPECIFIAATIONS
+
+• Screen Type: Monochrome STN graphic LCD 
+  (no color, purely black-and-white pixels with a green/amber backlight).
+
+• Resolution: 84 x 48 pixels.
+
+• Physical Size: 1.5 inches diagonally.
+
+• Text Capacity: Accommodates up to 5 lines of text simultaneously.
+
+• Form Factor: Positioned horizontally in a landscape orientation right
+  in the center of the split QWERTY keyboard.
+
+• Additional Visual Features: Supports dynamic font sizing, pixel-art screensavers, 
+  and dedicated text templates or smileys.
+
+     
+     """);
+    }
+if (booksettings  == 3){
+     System.out.println("""
+               NETWORK & DATA SPEED 
+• 2G Mobile Data: No GPRS or EDGE support. It relies on CSD (Circuit-Switched Data)
+  to load primitive text-based WAP pages over a dial-up style mobile connection.
+
+• Data Transfer Rate: CSD caps out at a maximum internet connection speed of just 9.6 kbps.
+              
+              HARDWARE INTERFACE TRANSFER SPEED
+• USB Cable Connection: It was the first Nokia phone to feature a direct Mini-USB port.
+• Connection Protocol: It uses USB 1.0 (Low-Speed / Full-Speed).
+• Transfer Rate: Transferring MP3 audio files from a PC into the phone's 64 MB 
+  memory maxes out at roughly 1.5 Mbps to 12 Mbps. 
+  Filling up the internal music drive completely usually takes several minutes.
+              
+              DIALING SPEED
+• Speed Dial Capacity: It supports standard 1-touch speed dialing for up to 8 custom contacts, 
+  mapped directly to keys 2 through 9 on the keyboard     
+""");
+    }
 }
 }
 }
+}
+
 
 
 switch (option){
@@ -237,7 +383,6 @@ if (register == 0){
 }
 
 
-
 switch (option){
        
        case 4-> {
@@ -255,11 +400,8 @@ String chat = """
 }
 }
 
-
-
 switch (option){
-       
-       case 5-> {
+      case 5-> {
 String message = """
   ========MESSAGE========    
 
@@ -278,7 +420,7 @@ String message = """
    System.out.println(message);
   System.out.println("Enter your option");
    int phonemessage = input.nextInt();
-
+System.out.println();
 if (phonemessage == 1){
   System.out.println("NO SIM TO MOVE FURTHER !!!!!!!");
    }
@@ -288,7 +430,7 @@ if (phonemessage == 2 ){
 if (phonemessage == 3){
    System.out.println("EMPTY OUTBOX !!!!!!!!");
    }
-if (phonemessage >= 4){
+if (phonemessage == 4){
    System.out.println("NO ITEM UNTIL THERE IS SIM !!!!!!!!!!!");
    }
 if (phonemessage== 5){
@@ -299,11 +441,221 @@ if (phonemessage>= 6){
    }
 }
 }
+
+
+switch (option){
+       case 6 -> {
+String calldivert = """
+ =============CALL DIVERT============    
+
+1. Divert all voice calls 
+
+2. Divert when busy
+
+3. Divert when not answered
+
+4. Divert when phone off 
+
+5. cancel all divert
+""";
+     System.out.println(calldivert);
+  System.out.println("Enter your option");
+   int divert = input.nextInt();
+System.out.println();
+if (divert == 1){
+  System.out.println("NO SIM TO MOVE FURTHER !!!!!!!");
+   }
+if (divert == 2 ){
+   System.out.println("EMPTY SIM CASE");
+   }
+if (divert == 3){
+   System.out.println("NO SIM FOUND ");
+   }
+if (divert == 4){
+   System.out.println("NO SIM FOUND");
+   }
+if (divert == 5){
+   System.out.println("EMPTY DIVERT !!!!!!");
+   }
+if (divert >= 6){
+   System.out.println("OPTION NOT FOUND");
+   }
+}
+}
+
+
+switch (option){
+        case 7-> {
+String settings ="""
+=============SETTINGS============
+
+1. Call settings
+
+2. Phone settings
+
+3. Security settings
+
+4. Restore factory settings 
+""";
+  System.out.println(settings);
+  System.out.println("Enter your option");
+   int devicesettings = input.nextInt();
+
+switch (devicesettings){
+       case 1 -> {
+String callssettings  ="""
+       CALL  SETTING
+   
+  1. Automatic redial
+  
+  2. Call waiting
+  
+  3. Speed dialing
+""";
+    System.out.println(callssettings);
+  System.out.println("Enter your option");
+   int settinginput = input.nextInt();
+ System.out.println();
+ if (settinginput == 1){
+  System.out.println("AUTOMATIC REDIAL ACTIVATED !!!!!!!");
+   }
+if (settinginput == 2 ){
+   System.out.println("EMPTY CALL TAKEN");
+   }
+if (settinginput == 3){
+   System.out.println("SPEED DIALING ACTIVATED");
+   }
+if (settinginput >= 4){
+   System.out.println("NO SIM FOUND");
+   }
+}
+}
+
+
+switch (devicesettings){
+        case  2 -> {
+String phonesettings  ="""
+       CALL  SETTING
+   
+  1. Language settings 
+  
+  2. Confirm SIM service  action 
+  
+  3. Network selection
+  
+  4. Welcome note
+""";
+    System.out.println(phonesettings);
+  System.out.println("Enter your option");
+   int settingin = input.nextInt();
+ if (settingin == 1){
+  System.out.println();
+  System.out.println("""
+           LANGUAGE OPTIONS
+ 
+1. English
+ 
+2. Arabic
+ 
+3. Spanish
+ 
+4. Japanese
+ 
+5. Chinese 
+  """);
+     System.out.println("Enter your option");
+   int language = input.nextInt();
+ 
+ System.out.println();
+ if (language  == 1){
+  System.out.println("LANGUAGE CHANGE TO ENGLISH !!!!!!!");
+   }
+if (language == 2 ){
+   System.out.println("LANGUAGE CHANGE TO ARABIC");
+   }
+if (language == 3){
+   System.out.println("LANGUAGE CHANGE TO SPANISH");
+   }
+if (language  == 4){
+   System.out.println("LANGUAGE CHANGE TO JAPANESE");
+   }
+if (language  == 5){
+   System.out.println("LANGUAGE CHANGE TO CHINESE");
+   }
+if (language  >= 6){
+   System.out.println("OPTION NOT FOUND");
+   }
+}      
+   
+   
+if (settingin  == 2){
+  System.out.println();
+  System.out.println("NO SIM FOUND YET. INSERT A SIM");
+   }   
+   
+if (settingin  == 3){
+  System.out.println();
+  System.out.println("""
+            NETWORK  SELECTION
+  
+SIM 1 : [NONE]
+  
+SIM 2 : [NONE]
+  
+DEFAULT : [NONE]
+  
+""");
+   }      
+if (settingin  == 4){
+  System.out.println();
+  System.out.println("""
+Welcome to Nokia 5510. It is actually the best phone
+
+you would get to see , promising you with all your
+
+possible desires, pleasure , and imaginations
+
+Thank you for choosing this product !!!!!!.
+""");
+}
+if (settingin  >= 5){
+  System.out.println();
+  System.out.println("OPTION NOT FOUND");
+}
+}
+}
+/*switch(devicesettings){
+         case 3 -> {
+String securitysettings="""
+       SECURITY  SETTINGS
+  
+      RESET PASSWORD  
+""";
+    System.out.println(securitysettings);
+   System.out.println("Enter your option");
+   int resetpassword = input.nextInt();
+      userpassword +=  resetpassword;
+}
+}
+*/
+switch (devicesettings){
+        case 4 -> {  
+String restoresetting ="""
+  
+        RESETTING YOU PHONE !!!!!!!!!! 
+  
+""";
+   System.out.println();
+   System.out.println(restoresetting);
+}
+}
+}
 }
 
 
 
-switch(option) {
+
+switch (option){
        case 10 -> {
 String music = """
 ======MUSICS=======  
@@ -352,12 +704,12 @@ String tracklist ="""
 """;
    System.out.println(tracklist);
 }
-}
-}  
-}
-
-switch(option){  
-  case 9 -> {
+ }
+  }
+   }
+   
+switch(option){
+      case 9 -> {
 String gamemenu ="""
 ===============WELCOME TO GAME STATION=================
         
@@ -440,7 +792,7 @@ switch(game){
 String quizgame1 = """ 
 ===============QUIZ TIME !!!!!!==================
 
-There are two(2) questions only, so try your luck.
+There are two(5) questions only, so try your luck.
 
 Use number to answer the questions(1,2, or 3).  
 
@@ -458,7 +810,6 @@ EYES WILL NOT PUSH US oooo.....
    System.out.println(quizgame1);
    System.out.println("Enter your answer ");
    int answer1 = input.nextInt();
-System.out.println();
 if (answer1 == 1){
   System.out.println("Wrong !!,");
   System.out.println("Correct answer: 729");
@@ -488,7 +839,6 @@ String quizgame2= """
     System.out.println(quizgame2);
    System.out.println("Enter your answer ");
    int answer2 = input.nextInt();
-System.out.println();
 if (answer2 == 1){
   System.out.println("Wrong !!,");
   System.out.println("Correct is answer: Treaty of Westphalia");
@@ -503,11 +853,115 @@ if (answer2 == 3){
 if (answer2 >= 4){
    System.out.println("Option not found");
    }
+
+System.out.println();
+String quizgame3="""
+            QUESTION  3
+
+What unique design feature defines the physical appearance of the Nokia 5510?
+
+1. A sliding touch panel
+
+2. A full QWERTY keyboard split across both sides of the screen
+
+3. A circular rotary dialing pad
+
+4. A completely buttonless frame
+""";
+    System.out.println(quizgame3);
+   System.out.println("Enter your answer ");
+   int answer3 = input.nextInt();
+if (answer3 == 1){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [2]");
+   }
+if (answer3 == 2 ){
+  System.out.println("CORRECT !!!!!!");
+   }
+if (answer3 == 3){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [2]");
+   } 
+if (answer3 >= 4){
+   System.out.println("Option not found");
+   }
+System.out.println();
+String quizgame4="""
+            QUESTION  4
+
+Borrowed from the classic Nokia 3310, what is the screen resolution of the Nokia 5510?
+
+1.  84 x 48 pixels
+
+2.  128 x 128 pixels
+
+3.  176 x 220 pixels
+
+4.  320 x 240 pixels
+""";
+    System.out.println(quizgame4);
+   System.out.println("Enter your answer ");
+   int answer4 = input.nextInt();
+
+if (answer4 == 1){
+  System.out.println("CORRECT !!!!!!");
+   }
+if (answer4 == 2 ){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [1]");
+   }
+if (answer4 == 3){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [1]");
+   } 
+if (answer4 == 4){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [1]");
+   }
+if (answer4 >= 5){
+   System.out.println("Option not found");
+   }
+System.out.println();
+String quizgame5="""
+            QUESTION  5
+
+ Which technology did the Nokia 5510 use to browse primitive W.A.P internet pages?
+ 
+1. G.P.R.S (General Packet Radio Service)
+
+2. C.S.D (Circuit-Switched Data at 9.6 k.b.p.s)
+
+3. Wi-Fi 1.0
+
+4. 3G  U.M.T.S
+""";
+     System.out.println(quizgame5);
+   System.out.println("Enter your answer ");
+   int answer5 = input.nextInt();
+
+if (answer5 == 1){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [2]");
+   }
+if (answer5 == 2 ){
+  System.out.println("CORRECT !!!!!!");
+   }
+if (answer5 == 3){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [2]");
+   } 
+if (answer5 == 4){
+  System.out.println("Wrong !!,");
+  System.out.println("Correct is answer: [2]");
+   }
+if (answer5 >= 5){
+   System.out.println("Option not found");
+   }
 }
  }
   }
    } 
-
+    
 switch (option){    
      case 14 -> {
 String ringtones = """ 
@@ -583,8 +1037,10 @@ if (ringtone >= 11){
      System.out.println("option not found");
     }
 }
-}
+ }
+  
    
+ 
 switch (option){
       case 11 -> {
 String clock = """
@@ -637,15 +1093,11 @@ String timer ="""
 """;
    System.out.println(timer);
 }
+ }
 }
-}
-}
-}
-
- 
-  
-  
-    
+ }
+  }
+    }
  
  
  
